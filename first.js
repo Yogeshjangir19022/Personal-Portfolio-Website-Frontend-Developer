@@ -4,14 +4,22 @@
 document.querySelector(".year").textContent = new Date().getFullYear();
 
 // =========================
-// Smooth Scroll for Nav Links
+// Smooth Scroll for Nav Links (with header offset fix)
 // =========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      const headerOffset = 80; // change this to match your header height in px
+      const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   });
 });
 
@@ -19,11 +27,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Contact Form Submit
 // =========================
 const form = document.querySelector("form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("✅ Message Sent! Thank you for contacting me.");
-  form.reset();
-});
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("✅ Message Sent! Thank you for contacting me.");
+    form.reset();
+  });
+}
 
 // =========================
 // Scroll Reveal Animation

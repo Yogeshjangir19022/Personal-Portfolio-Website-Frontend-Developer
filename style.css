@@ -220,3 +220,8 @@ footer {
 }
 
 
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* adjust to your header height */
+}
