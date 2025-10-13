@@ -108,12 +108,20 @@
   <!-- Contact Section -->
   <section id="contact" class="glass-section">
     <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn primary">Send Message</button>
-    </form>
+ <form action="https://formsubmit.co/yogeshj331701@gmail.com" method="POST">
+  <input type="text" name="name" placeholder="Your name" required>
+  <input type="email" name="email" placeholder="Your email" required>
+  <textarea name="message" placeholder="Your message" required></textarea>
+
+  <!-- Optional hidden fields -->
+  <input type="hidden" name="_subject" value="New message from website">
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Optional: redirect user after submit -->
+  <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+  <button type="submit">Send</button>
+</form>
+
     <p>
       Or reach me at: <a href="yogeshj331701@gmail.com">yogeshj331701@gmail.com</a>
     </p>
