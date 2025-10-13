@@ -278,3 +278,18 @@ html {
     grid-template-columns: 1fr;
   }
 }
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#formResult { margin-top: 12px; font-weight: 600; }
